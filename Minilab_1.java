@@ -15,6 +15,7 @@ public class Minilab_1 {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
 
+        //constant variable for the threshold test
         final int CAP = 5; 
 
         int userInt;
@@ -30,15 +31,18 @@ public class Minilab_1 {
 
         userInt = scnr.nextInt();
 
+        //continues to check user input until the integer is non-zero
         while (userInt == 0) {
             System.out.println("Number cannot be zero; please reenter");
             userInt = scnr.nextInt();
         }
 
+        //puts a line before and after for formatting purposes
         System.out.println("\n" + "Please enter doubles to analyze (negative to stop)" + "\n");
         
         currentUserDouble = scnr.nextDouble();
 
+        //continues to put the doubles the user enters into a vector until user enters a negative
         while (currentUserDouble >= 0) {
             userDoubles.add(currentUserDouble);
             currentUserDouble = scnr.nextDouble();
@@ -47,14 +51,17 @@ public class Minilab_1 {
         countOfDoubles = userDoubles.size();
 
         for (int i = 0; i < countOfDoubles; i++) {
+            //checks if each user double is greater than half of non-zero int
             if (userDoubles.get(i) > ((double)userInt / 2)) {
                 countOfDoublesGreaterThanHalfOfInt++;
             }
 
+            //checks if each user double is a multiple of the non-zero int
             if (userDoubles.get(i) % userInt == 0) {
                 countOfDoublesThatAreMultiplesOfInt++;
             }
 
+            //checks if each user double is within 5 of the non-zero int
             if (Math.abs(userDoubles.get(i) - userInt) <= CAP) {
                 countOfDoublesWithinFiveOfInt++;
             } 
