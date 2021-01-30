@@ -1,7 +1,7 @@
 /*
-Author Name: Katy Hochstetler
-Class: CSC205AC
-Project Name: Minilab_1
+CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
+Minilab: <Minilab #1>
+Author: Katy Hochstetler
 Description: In this lab, a user will first be prompted to enter in a non-zero integer. It will continue to prompt until given 
 non-zero integer. Then the user is prompted to enter in doubles, using a negative number to stop. Then the program will display 
 the number of doubles, the amount of doubles that are greater than half of the non-zero integer, the amount of doubles
