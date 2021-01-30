@@ -4,7 +4,7 @@ Class: CSC205AC
 Project Name: Minilab_1
 Description: In this lab, a user will first be prompted to enter in a non-zero integer. It will continue to prompt until given 
 non-zero integer. Then the user is prompted to enter in doubles, using a negative number to stop. Then the program will display 
-the number of doubles, the amount of doubles thar are greater than half of the non-zero integer, the amount of doubles
+the number of doubles, the amount of doubles that are greater than half of the non-zero integer, the amount of doubles
 that are multiples of the non-zero integer, and how many doubles are within five of the non-zero integer.
 */
 import java.util.Scanner;
@@ -47,7 +47,7 @@ public class Minilab_1 {
         countOfDoubles = userDoubles.size();
 
         for (int i = 0; i < countOfDoubles; i++) {
-            if (userDoubles.get(i) > (userInt / 2)) {
+            if (userDoubles.get(i) > ((double)userInt / 2)) {
                 countOfDoublesGreaterThanHalfOfInt++;
             }
 
