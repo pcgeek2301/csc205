@@ -35,7 +35,7 @@ public class Minilab_1 {
             userInt = scnr.nextInt();
         }
 
-        System.out.println("Please enter doubles to analyze (negative to stop)");
+        System.out.println("\n" + "Please enter doubles to analyze (negative to stop)" + "\n");
         
         currentUserDouble = scnr.nextDouble();
 
