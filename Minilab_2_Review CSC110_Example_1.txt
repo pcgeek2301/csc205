@@ -1,0 +1,140 @@
+Please enter a seed:
+1
+
+Please enter the size of the array:
+1
+
+Array size must be greater than 1.  Please reenter:
+0
+
+Array size must be greater than 1.  Please reenter:
+-1
+
+Array size must be greater than 1.  Please reenter:
+12
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+1
+
+Array: 6  1  1  6  8  4  5  1  1  1  7  7
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+2
+
+Average: 4.0
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+3
+
+Largest: 8
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+4
+
+3Count: 0
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+5
+
+Less than half of first: 5
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+6
+
+Repeats: 4
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+7
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+1
+
+Array: 7  1  1  6  8  4  5  1  1  1  7  6
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+9
+
+Illegal option, try again
+
+Please choose an option:
+        1       Print the array
+        2       Find the average
+        3       Find the largest element
+        4       Count how many times 3 occurred
+        5       Count how many elements are less than half of the first element
+        6       Find how many times numbers repeat consecutively
+        7       Swap the first and last elements
+        8       Exit
+8
