@@ -6,6 +6,7 @@ Description: In this mini lab the user is asked to type in a seed integer and th
 The user is presented with a menu of options to manipulate the array or calculate statistics. 
 */
 import java.util.Scanner;
+import java.lang.Math;
 import java.util.Random;
 
 public class Minilab_2 {
