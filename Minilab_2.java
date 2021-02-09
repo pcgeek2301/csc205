@@ -18,10 +18,10 @@ public class Minilab_2 {
         int userChoice = 0;
         int[] userArray;
 
-        System.out.println("Please enter a seed:\n");
+        System.out.println("Please enter a seed:");
         userSeed = scnr.nextInt();
 
-        System.out.println("Please enter the size of the array:\n");
+        System.out.println("\nPlease enter the size of the array:");
         userArraySize = scnr.nextInt();
 
         while (userArraySize <= 1) {
@@ -66,7 +66,7 @@ public class Minilab_2 {
                     System.out.println("Illegal option, try again");
                     break;        
             }
-        } while (userChoice >= 1 && userChoice < 8);
+        } while (userChoice != 8);
 
         scnr.close();
     }
@@ -104,7 +104,11 @@ public class Minilab_2 {
         }
 
         average = total / userArray.length;
-        System.out.printf("%.1f", average);
+        if (average - Math.floor(average) == 0) {
+            System.out.printf("%.1f", average);
+        } else {
+            System.out.printf("%.3f", average);
+        }
         System.out.println("");
     }
 
@@ -181,7 +185,7 @@ public class Minilab_2 {
         Random rand = new Random(userSeed);
 
         for (int i = 0; i < userArray.length; i++) {
-            userArray[i] = rand.nextInt(MAX);
+            userArray[i] = rand.nextInt(MAX + 1);
         }
     }
 }
