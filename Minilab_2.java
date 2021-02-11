@@ -2,8 +2,9 @@
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Minilab: <Minilab #2>
 Author: Katy Hochstetler
-Description: In this mini lab the user is asked to type in a seed integer and the amount of integers for an array. 
-The user is presented with a menu of options to manipulate the array or calculate statistics. 
+Description: In this mini lab the user is asked to type in a seed integer and the amount of integers for an array. The program
+uses the seed integer and the specified size to generate an array of random numbers. The user is presented with a menu of options to 
+manipulate the array or calculate statistics. 
 */
 import java.util.Scanner;
 import java.lang.Math;
@@ -50,13 +51,13 @@ public class Minilab_2 {
                     FindLargest(userArray);
                     break;
                 case 4:
-                    FindAmountOfThrees(userArray);
+                    FindCountOfThrees(userArray);
                     break;
                 case 5:
-                    FindAmountLessThanHalfOfFirst(userArray);
+                    FindCountLessThanHalfOfFirst(userArray);
                     break;
                 case 6:
-                    FindAmountOfDuplicates(userArray);
+                    FindCountOfDuplicates(userArray);
                     break;
                 case 7:
                     SwapElements(userArray);
@@ -128,7 +129,7 @@ public class Minilab_2 {
     }
 
     // This method finds the amount of threes in the generated integers 
-    public static void FindAmountOfThrees(int[] userArray) {
+    public static void FindCountOfThrees(int[] userArray) {
         System.out.print("3Count: ");
         int countOfThrees = 0;
 
@@ -142,7 +143,7 @@ public class Minilab_2 {
     }
 
     // This method finds the amount of integers that are less than half of the first integer
-    public static void FindAmountLessThanHalfOfFirst(int[] userArray) {
+    public static void FindCountLessThanHalfOfFirst(int[] userArray) {
         System.out.print("Less than half of first: ");
         int countOfIntsLessThanHalfOfFirst = 0;
 
@@ -156,7 +157,7 @@ public class Minilab_2 {
     }
 
     // This method finds the amount of repeats in the generated integers 
-    public static void FindAmountOfDuplicates(int[] userArray) {
+    public static void FindCountOfDuplicates(int[] userArray) {
         System.out.print("Repeats: ");
         int countOfDuplicates = 0;
         int previousNum;
