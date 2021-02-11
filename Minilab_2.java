@@ -28,7 +28,7 @@ public class Minilab_2 {
         userArraySize = scnr.nextInt();
 
         while (userArraySize <= 1) {
-            System.out.println("Array size must be greater than 1.  Please reenter:\n");
+            System.out.println("\nArray size must be greater than 1.  Please reenter:");
             userArraySize = scnr.nextInt();
         }
 
