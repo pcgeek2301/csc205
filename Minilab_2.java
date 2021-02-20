@@ -8,6 +8,7 @@ manipulate the array or calculate statistics.
 */
 import java.util.Scanner;
 import java.lang.Math;
+import java.math.BigDecimal;
 import java.util.Random;
 
 public class Minilab_2 {
@@ -27,7 +28,7 @@ public class Minilab_2 {
         userArraySize = scnr.nextInt();
 
         while (userArraySize <= 1) {
-            System.out.println("Array size must be greater than 1.  Please reenter:\n");
+            System.out.println("\nArray size must be greater than 1.  Please reenter:");
             userArraySize = scnr.nextInt();
         }
 
@@ -97,6 +98,8 @@ public class Minilab_2 {
 
     // This method finds the average value from the generated integers 
     public static void FindAverage(int[] userArray) {
+        BigDecimal decimal; 
+        String output;
         System.out.print("Average: ");
         double total = 0;
         double average = 0;
@@ -106,10 +109,15 @@ public class Minilab_2 {
         }
 
         average = total / userArray.length;
+
+        decimal = new BigDecimal(String.valueOf(average));
+       
+        output = decimal.stripTrailingZeros().toPlainString();
+        
         if (average - Math.floor(average) == 0) {
             System.out.printf("%.1f", average);
         } else {
-            System.out.printf("%.3f", average);
+            System.out.print(output);
         }
         System.out.println("");
     }
