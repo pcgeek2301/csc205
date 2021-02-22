@@ -1,4 +1,3 @@
-package Minilab_3;
 
 //This class will test our Rectangle
 

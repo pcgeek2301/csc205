@@ -1,4 +1,3 @@
-package Minilab_3;
 
 /*	This class will represent a rectangle.   It has 2 dimensions, which are
 	called width and height (so it does not matter which is larger).
