@@ -1,4 +1,4 @@
-
+package Minilab_3;
 //This class will test our Rectangle
 
 public class RectangleTester_Minilab_3_Inheritance

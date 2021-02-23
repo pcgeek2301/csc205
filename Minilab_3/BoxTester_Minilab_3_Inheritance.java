@@ -1,4 +1,4 @@
-
+package Minilab_3;
 // This will run test cases for the Box class that is a subclass of Rectangle.
 //  THERE IS NO PROMPT, but it is expecting input of the form "testing <what to test>"
 
