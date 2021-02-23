@@ -13,11 +13,14 @@ public class Box extends Rectangle {
 
     protected int depth; 
  
+    //-------------- constructors 
+    // default constructor 
     public Box() {
         super(); 
         this.depth = 6; 
     }
 
+    //parameterized constructor
     public Box(int theWidth, int theHeight, int theDepth) {
         super(theWidth, theHeight);
 
@@ -28,19 +31,23 @@ public class Box extends Rectangle {
         this.depth = theDepth;
     }
 
+    // -------- methods
+    // the toString method writes out the dimensions. Example - Box: 2x5x6 
     public String toString() {
         return super.toString() + "x" + depth;
     }
     
+    // this method is an override to the father class. it throws an exception because 3D objects don't have perimeter. 
     public int getPerimeter() {
         throw new IllegalStateException("Three-dimensional objects do not have a perimeter");
     }
     
-
+    //this methods returns the total of the 3 dimensions 
     public int getSumOfDimensions() {
         return super.getSumOfDimensions() + this.depth;
     }
 
+    // this method returns the surface area of the object
     public int getSurfaceArea() {
         return (2 * this.depth * this.width) + (2 * this.depth * this.height) + (2 * this.height * this.width);
     }
