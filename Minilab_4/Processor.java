@@ -5,4 +5,8 @@ public class Processor extends Worker {
         super(theName, theRating, theID);
     }
     
+    public double calculateBonus(double multiplier) {
+        //TODO fix this 
+        return 0; 
+    }
 }

@@ -15,5 +15,12 @@ public abstract class Worker {
             this.rating = theRating;
         }
     }
-    
+
+    // compareTo ??? confused by instructions but its also 1am soo come back later and try again
+
+    public abstract double calculateBonus(double multiplier);
+
+    public String toString() {
+        return this.getClass().getName() + ": " + name + ", rating:" + rating + ", ID:" + id;
+    }
 }
