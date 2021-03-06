@@ -1,4 +1,4 @@
-package Minilab_4;
+
 /*
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Minilab: <Minilab #4>
@@ -27,6 +27,6 @@ public class Specialist extends Worker {
     }
 
     public String toString() {
-        return super.toString() + ", target:" + bonusTarget + " profit: " + profitSharing;
+        return super.toString() + ", target:" + bonusTarget + ", profit:" + profitSharing;
     }
 }

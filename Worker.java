@@ -1,4 +1,4 @@
-package Minilab_4;
+
 /*
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Minilab: <Minilab #4>
@@ -18,7 +18,7 @@ public abstract class Worker implements Comparable<Worker>{
         this.name = theName;
         this.id = theID;
 
-        if (theRating >= 1 && theRating <= 5) {
+        if (theRating < 1 || theRating > 5) {
             throw new IllegalArgumentException("Rating must be between 1 and 5");
         } else {
             this.rating = theRating;
@@ -29,14 +29,20 @@ public abstract class Worker implements Comparable<Worker>{
     //postive number means the workers rating is > anothers rating 
     //0 means they are equal
     public int compareTo(Worker another) {
-        int comparison;
+        int comparison = 0;
 
         if (rating < another.rating) {
             comparison = -1;
         } else if (rating > another.rating) {
             comparison = 1;
-        } else {
-            comparison = 0;
+        } else if (rating == another.rating){
+            if (id < another.id) {
+                comparison = -1;
+            } else if (id > another.id){
+                comparison = 1;
+            } else {
+                comparison = 0;
+            }
         }
 
         return comparison;
@@ -45,6 +51,6 @@ public abstract class Worker implements Comparable<Worker>{
     public abstract double calculateBonus(double multiplier);
 
     public String toString() {
-        return this.getClass().getName() + ": " + name + ", rating:" + rating + ", ID:" + id;
+        return this.getClass().getName() + ":" + name + ", rating:" + rating + ", ID:" + id;
     }
 }
