@@ -10,10 +10,12 @@ The compareTo method is inherited. The toString method is also inherited
 
 public class Tech extends Worker {
 
-    public Tech(String theName, int theRating, int theID) {
-        super(theName, theRating, theID);
+    // parameterized constructor 
+    public Tech(String userName, int userRating, int userID) {
+        super(userName, userRating, userID);
     }
 
+    // tech has no bonus so it just returns 0. 
     public double calculateBonus(double mulitplier) {
         return 0;
     }

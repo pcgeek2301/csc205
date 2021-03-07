@@ -1,4 +1,3 @@
-
 /*
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Minilab: <Minilab #4>
@@ -12,17 +11,20 @@ updated using the original first half of the string from the worker class and th
 public class Processor extends Worker {
     protected double bonusTarget;
 
-    public Processor(String theName, int theRating, int theID, double theBonusTarget) {
-        super(theName, theRating, theID);
-        this.bonusTarget = theBonusTarget;
+    // parameterized constructor
+    public Processor(String userName, int userRating, int userID, double userBonusTarget) {
+        super(userName, userRating, userID);
+        this.bonusTarget = userBonusTarget;
     }
     
+    // calculates the bonus the processor earns
     public double calculateBonus(double multiplier) {
         double bonus = bonusTarget * multiplier;
         
         return bonus; 
     }
 
+    // displays the important information for the processor. 
     public String toString() {
         return super.toString() + ", target:" + bonusTarget;
     }

@@ -14,18 +14,21 @@ public class Specialist extends Worker {
     protected double bonusTarget;
     protected double profitSharing;
 
-    public Specialist(String theName, int theRating, int theID, double theBonusTarget, double theProfitSharing) {
-        super(theName, theRating, theID);
-        this.bonusTarget = theBonusTarget;
-        this.profitSharing = theProfitSharing;
+    // parameterized constructor  
+    public Specialist(String userName, int userRating, int userID, double userBonusTarget, double userProfitSharing) {
+        super(userName, userRating, userID);
+        this.bonusTarget = userBonusTarget;
+        this.profitSharing = userProfitSharing;
     }
 
+    // calculates the bonus for the specialist 
     public double calculateBonus(double multiplier) {
         double bonus = (bonusTarget + profitSharing) * multiplier;
         
         return bonus;
     }
 
+    // displays the important info for the specialist
     public String toString() {
         return super.toString() + ", target:" + bonusTarget + ", profit:" + profitSharing;
     }

@@ -14,20 +14,21 @@ public abstract class Worker implements Comparable<Worker>{
     protected int rating; 
     protected int id;
    
-    public Worker(String theName, int theRating, int theID) {
-        this.name = theName;
-        this.id = theID;
+    public Worker(String userName, int userRating, int userID) {
+        this.name = userName;
+        this.id = userID;
 
-        if (theRating < 1 || theRating > 5) {
+        if (userRating < 1 || userRating > 5) {
             throw new IllegalArgumentException("Rating must be between 1 and 5");
         } else {
-            this.rating = theRating;
+            this.rating = userRating;
         }
     }
 
-    //negative number means the workers rating is < another's rating 
-    //postive number means the workers rating is > anothers rating 
-    //0 means they are equal
+    // ----  This method compares two workers
+    // negative number means the workers rating is < another's rating 
+    // postive number means the workers rating is > anothers rating 
+    // 0 means they are equal
     public int compareTo(Worker another) {
         int comparison = 0;
 
