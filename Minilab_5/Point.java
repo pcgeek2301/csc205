@@ -1,3 +1,5 @@
+package Minilab_5;
+
 import java.lang.Math;
 
 /*

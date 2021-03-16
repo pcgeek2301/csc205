@@ -1,4 +1,4 @@
-
+package Minilab_5;
 //This will run test cases for the Point class.   It will not prompt for input,
 //but is expecting input of the form "testing <what to test>"
 
