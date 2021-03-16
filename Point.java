@@ -1,15 +1,15 @@
-package Minilab_5;
 import java.lang.Math;
+
 /*
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Minilab: <Minilab #5>
 Author: <Katy Hochstetler> <36473082>
-Description: <In this mini lab I have created a point class that implements the point interface class. It can create the point,
+Description: <In this mini lab I have created a point class that implements the point interface. It can create the point,
 return the point as a string, return the distance between two points, return whether the point is equal to another object, check if the 
 point is in a particular quadrant, translate the point, and checks if the point is on the x axis or on the y axis 
 */
 
-public class Point implements PointInterface{
+public class Point implements PointInterface {
     private int x;
     private int y;
 
@@ -123,27 +123,13 @@ public class Point implements PointInterface{
 
     // checks if the point is on the x axis 
     public boolean onXAxis() {
-        boolean onXAxis = false;
-
-        if (y == 0) {
-            onXAxis = true;
-        } else {
-            onXAxis = false;
-        }
-
-        return onXAxis;
+        
+        return this.y == 0;
     }
 
     // checks if the point is on the y axis 
     public boolean onYAxis() {
-        boolean onYAxis = false;
 
-        if (x == 0) {
-            onYAxis = true;
-        } else {
-            onYAxis = false;
-        }
-
-        return onYAxis;
+        return this.x == 0;
     }
 }

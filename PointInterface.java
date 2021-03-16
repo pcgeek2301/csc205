@@ -1,4 +1,4 @@
-package Minilab_5;
+
 
 //This is the interface for a Point class (which will represent a 2-dimensional Point)
 
