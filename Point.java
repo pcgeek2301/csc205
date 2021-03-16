@@ -46,11 +46,15 @@ public class Point implements PointInterface {
         double distX; 
         double distY;
         double distance; 
+        
+        if (otherPoint == null) {
+            throw new IllegalArgumentException("Other point is null");
+        } else {
+            distX = otherPoint.x - x; 
+            distY = otherPoint.y - y; 
 
-        distX = otherPoint.x - x; 
-        distY = otherPoint.y - y; 
-
-        distance = Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2));
+            distance = Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2));
+        }
         
         return distance;
     }
