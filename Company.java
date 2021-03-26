@@ -132,7 +132,8 @@ public class Company {
             if (currEmployee != null && employeeName.equals(currEmployee.getName())) {
                 if (comp.employees[i] instanceof Hourly) {
                     for (int j = 0; j < comp.MAX; j++) {
-                        if (employeeName == comp.hourEmployees[j].getName()) {
+                        Employee currHourEmployee = comp.hourEmployees[j];
+                        if (currHourEmployee != null && employeeName.equals(currHourEmployee.getName())) {
                             comp.hourEmployees[j].giveRaise(raise);
                         } 
                     }
@@ -169,7 +170,7 @@ public class Company {
                 System.out.println(" per week. What would you like to change it to?");
                 newHours = Integer.parseInt(scnr.nextLine());
                 comp.hourEmployees[i].setHours(newHours);
-                System.out.println(employeeName + "will now work " + newHours + " hours per week");
+                System.out.println(employeeName + " will now work " + newHours + " hours per week");
             }
         }
     }
