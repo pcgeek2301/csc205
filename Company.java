@@ -18,7 +18,7 @@ public class Company {
         while (!endOfProgram) {
             PrintMenu();
             userChoice = scnr.nextLine();
-            userChoice.toLowerCase();
+            userChoice = userChoice.toLowerCase();
             switch (userChoice) {
                 case "a":
                     PromptUserForNewEmployee(theCompany, scnr);
@@ -74,7 +74,7 @@ public class Company {
         System.out.println("Are they an hourly worker? (Y/N)");
         userInput = scnr.nextLine();
 
-        userInput.toLowerCase();
+        userInput = userInput.toLowerCase();
 
         if (userInput.equals("y")) {
             System.out.println("How many hours per week do they work?");
