@@ -1,11 +1,22 @@
+/*
+CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
+Program: <Program #1>
+Author: <Katy Hochstetler> <36473082>
+Description: <In this program I have created 5 java files. The company includes the main method and the 
+arrays that hold the employees. The user can add employees, list employees, give an employee a raise, 
+give out paychecks, and change employee hours for an hourly employee.
+*/
+
 import java.util.Scanner;
 
 public class Company {
     final int MAX = 5; // max amount of employees at a time 
 
+    // arrays for employees 
     Employee[] employees = new Employee[MAX];
     AdministrativeAssistant[] hourEmployees = new AdministrativeAssistant[MAX];
 
+    // tracking how many employees in each array
     int empCount = 0;
     int hourEmpcount = 0;
 
@@ -48,6 +59,7 @@ public class Company {
         scnr.close();
     }
 
+    // menu of options for user to choose from
     public static void PrintMenu() {
         System.out.println("What do you want to do?");
         System.out.println("A. Add an Employee");
@@ -58,6 +70,7 @@ public class Company {
         System.out.println("F. Quit");
     }
 
+    // this prompts the user to add a new employee and uses the add employee method
     public static void PromptUserForNewEmployee(Company comp, Scanner scnr) {
 
         String userInput = "";
@@ -89,6 +102,7 @@ public class Company {
         System.out.println(name + " was hired!");
     }
 
+    // adds an employee to the employee array and if they are hourly adds them to the hourly array as well.
     public static void AddEmployee(Employee newEmployee, boolean isHourly, Company comp) {
         comp.employees[comp.empCount] = newEmployee;
         comp.empCount++;
@@ -98,6 +112,7 @@ public class Company {
         } 
     }
     
+    // lists out all the employees
     public static void ListEmployees(Company comp) {
         if (comp.employees[0] == null) {
             System.out.println("Nobody works here!");
@@ -117,6 +132,7 @@ public class Company {
         }
     }
 
+    // gives a raise to a specific employee based on their name
     public static void GiveRaiseToEmployee(Company comp, Scanner scnr) {
         String employeeName = "";
         double raise = 0;
@@ -147,6 +163,7 @@ public class Company {
         System.out.println(employeeName + " is happy!");
     }
 
+    // pays all the employees 
     public static void PayDay(Company comp) {
         for (int i = 0; i < comp.MAX; i++) {
             if (comp.employees[i] != null) {
@@ -157,6 +174,7 @@ public class Company {
         System.out.println("Hooray for money!");
     }
 
+    // change the hours of an hourly worker
     public static void ChangeEmployeeHours(Company comp, Scanner scnr) {
         String employeeName = "";
         int newHours = 0;
