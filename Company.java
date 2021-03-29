@@ -14,11 +14,11 @@ public class Company {
 
     // arrays for employees 
     Employee[] employees = new Employee[MAX];
-    AdministrativeAssistant[] hourEmployees = new AdministrativeAssistant[MAX];
+    AdministrativeAssistant[] administrativeAssistants = new AdministrativeAssistant[MAX];
 
     // tracking how many employees in each array
     int empCount = 0;
-    int hourEmpcount = 0;
+    int adminCount = 0;
 
     public static void main(String[] args) {
         Company theCompany = new Company();
@@ -27,24 +27,23 @@ public class Company {
         boolean endOfProgram = false;
 
         while (!endOfProgram) {
-            PrintMenu();
-            userChoice = scnr.nextLine();
-            userChoice = userChoice.toLowerCase();
+            theCompany.PrintMenu();
+            userChoice = scnr.nextLine().toLowerCase();
             switch (userChoice) {
                 case "a":
-                    PromptUserForNewEmployee(theCompany, scnr);
+                    theCompany.PromptUserForNewEmployee(theCompany, scnr);
                     break;
                 case "b":
-                    ListEmployees(theCompany);
+                    theCompany.ListEmployees(theCompany);
                     break;
                 case "c":
-                    GiveRaiseToEmployee(theCompany, scnr);
+                    theCompany.GiveRaiseToEmployee(theCompany, scnr);
                     break;
                 case "d":
-                    PayDay(theCompany);
+                    theCompany.PayDay(theCompany);
                     break;
                 case "e":
-                    ChangeEmployeeHours(theCompany, scnr);
+                    theCompany.ChangeEmployeeHours(theCompany, scnr);
                     break;
                 case "f":
                     System.out.println("Bye!");
@@ -60,7 +59,7 @@ public class Company {
     }
 
     // menu of options for user to choose from
-    public static void PrintMenu() {
+    public void PrintMenu() {
         System.out.println("What do you want to do?");
         System.out.println("A. Add an Employee");
         System.out.println("B. List all Employees");
@@ -71,9 +70,9 @@ public class Company {
     }
 
     // this prompts the user to add a new employee and uses the add employee method
-    public static void PromptUserForNewEmployee(Company comp, Scanner scnr) {
+    public void PromptUserForNewEmployee(Company comp, Scanner scnr) {
 
-        String userInput = "";
+        String isHourlyYN = "";
         String name = "";
         double salary = 0;
         int hours = 0;
@@ -85,11 +84,9 @@ public class Company {
         salary = Double.parseDouble(scnr.nextLine());
 
         System.out.println("Are they an hourly worker? (Y/N)");
-        userInput = scnr.nextLine();
+        isHourlyYN = scnr.nextLine().toLowerCase();
 
-        userInput = userInput.toLowerCase();
-
-        if (userInput.equals("y")) {
+        if (isHourlyYN.equals("y")) {
             System.out.println("How many hours per week do they work?");
             hours = Integer.parseInt(scnr.nextLine());
             AdministrativeAssistant newEmployee = new AdministrativeAssistant(name, salary, hours);
@@ -103,17 +100,17 @@ public class Company {
     }
 
     // adds an employee to the employee array and if they are hourly adds them to the hourly array as well.
-    public static void AddEmployee(Employee newEmployee, boolean isHourly, Company comp) {
+    public void AddEmployee(Employee newEmployee, boolean isHourly, Company comp) {
         comp.employees[comp.empCount] = newEmployee;
         comp.empCount++;
         if (isHourly) {
-            comp.hourEmployees[comp.hourEmpcount] = (AdministrativeAssistant)newEmployee;
-            comp.hourEmpcount++;
+            comp.administrativeAssistants[comp.adminCount] = (AdministrativeAssistant)newEmployee;
+            comp.adminCount++;
         } 
     }
     
     // lists out all the employees
-    public static void ListEmployees(Company comp) {
+    public void ListEmployees(Company comp) {
         if (comp.employees[0] == null) {
             System.out.println("Nobody works here!");
         } else {
@@ -133,7 +130,7 @@ public class Company {
     }
 
     // gives a raise to a specific employee based on their name
-    public static void GiveRaiseToEmployee(Company comp, Scanner scnr) {
+    public void GiveRaiseToEmployee(Company comp, Scanner scnr) {
         String employeeName = "";
         double raise = 0;
 
@@ -148,9 +145,9 @@ public class Company {
             if (currEmployee != null && employeeName.equals(currEmployee.getName())) {
                 if (comp.employees[i] instanceof Hourly) {
                     for (int j = 0; j < comp.MAX; j++) {
-                        Employee currHourEmployee = comp.hourEmployees[j];
+                        Employee currHourEmployee = comp.administrativeAssistants[j];
                         if (currHourEmployee != null && employeeName.equals(currHourEmployee.getName())) {
-                            comp.hourEmployees[j].giveRaise(raise);
+                            comp.administrativeAssistants[j].giveRaise(raise);
                         } 
                     }
                 } else {
@@ -164,7 +161,7 @@ public class Company {
     }
 
     // pays all the employees 
-    public static void PayDay(Company comp) {
+    public void PayDay(Company comp) {
         for (int i = 0; i < comp.MAX; i++) {
             if (comp.employees[i] != null) {
                 comp.employees[i].getPaid();
@@ -175,7 +172,7 @@ public class Company {
     }
 
     // change the hours of an hourly worker
-    public static void ChangeEmployeeHours(Company comp, Scanner scnr) {
+    public void ChangeEmployeeHours(Company comp, Scanner scnr) {
         String employeeName = "";
         int newHours = 0;
 
@@ -183,11 +180,11 @@ public class Company {
         employeeName = scnr.nextLine();
 
         for (int i = 0; i < comp.MAX; i++) {
-            if (comp.hourEmployees[i] != null && employeeName.equals(comp.hourEmployees[i].getName())) {
-                System.out.print(employeeName + " currently works " + comp.hourEmployees[i].getHours());
+            if (comp.administrativeAssistants[i] != null && employeeName.equals(comp.administrativeAssistants[i].getName())) {
+                System.out.print(employeeName + " currently works " + comp.administrativeAssistants[i].getHours());
                 System.out.println(" per week. What would you like to change it to?");
                 newHours = Integer.parseInt(scnr.nextLine());
-                comp.hourEmployees[i].setHours(newHours);
+                comp.administrativeAssistants[i].setHours(newHours);
                 System.out.println(employeeName + " will now work " + newHours + " hours per week");
             }
         }

@@ -20,13 +20,13 @@ public class AdministrativeAssistant extends Employee implements Hourly {
     public void setHours(int hours) {
         this.hours = hours;
     }
+    
+    public int getHours() {
+        return this.hours;
+    }
 
     public void giveRaise(double raise) {
        salary += raise;
-    }
-
-    public int getHours() {
-        return this.hours;
     }
 
     public void changeHours(int newHours) {
