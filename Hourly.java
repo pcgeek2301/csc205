@@ -9,7 +9,7 @@ a get hours method, change hours method, and to give a raise to an employee meth
 public interface Hourly {
     public int getHours();
 
-    public void changeHours(int newHours);
+    public void setHours(int newHours);
 
     public void giveRaise(double raise);
 
