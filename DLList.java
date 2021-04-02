@@ -165,7 +165,8 @@ public class DLList<E> {
 			//    it is part of the list.  draw it out so see how
 			//    the links change...
 			temp.next = cursor.next;
-			temp.prev = cursor.prev;
+			temp.prev = cursor;
+			cursor.next.prev = temp;
 			cursor.next = temp;
 		}
 	}
