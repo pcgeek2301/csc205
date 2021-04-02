@@ -127,6 +127,8 @@ public class DLList<E> {
 			//now we have a pointer to the node to be deleted and the one in front
 			               //draw it out to see how links must change...
 			inFront.next = doomed.next;
+			if (doomed.next != null)
+			doomed.next.prev = inFront;
 
 			//also...if the one that was deleted was the tail, we must reset the tail
 			if (doomed == tail)
