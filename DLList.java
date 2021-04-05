@@ -8,7 +8,7 @@ public class DLList<E> {
 	protected DLLNode<E> tail;
 
 	//------- constructors
-	public     DLList() {
+	public DLList() {
 		head = tail = null;
 	}
 
@@ -45,18 +45,15 @@ public class DLList<E> {
 	//removeFirst - removes and returns the first element
 	public E removeFirst() {
 		//case1: list is empty
-		if (head == null)
+		if (head == null) {
 			throw new NoSuchElementException("can't removeFirst from empty list!");
-
 		//case2: list has 1 element
-		else if (head == tail) {
+		} else if (head == tail) {
 			E savedData = head.data;
 			head = tail = null;
 			return savedData;
-		}
-
 		//case3: list has many elements
-		else {
+		} else {
 			E savedData = head.data;
 			head = head.next;
 			head.prev = null;
@@ -67,25 +64,20 @@ public class DLList<E> {
 	//removeLast - removes and returns the last element
 	public E removeLast() {
 		//case1: list is empty
-		if (head == null)
+		if (head == null) {
 			throw new NoSuchElementException("can't removeLast from empty list!");
-
 		//case2: list has 1 element
-		else if (head == tail) {
+		} else if (head == tail) {
 			E savedData = tail.data;
 			head = tail = null;
 			return savedData;
-		}
-
 		//case3: list has many elements
-		else {
+		} else {
 			E savedData = tail.data;
 			tail = tail.prev;
 			tail.next = null;
 			return savedData;
-			
 		}
-
 	}
 
 	//contains - returns true if the list contains what is received
@@ -97,7 +89,6 @@ public class DLList<E> {
 				return true;                //so return
 			cursor = cursor.next;
 		}
-
 		return false;   //if we finished the loop and got to here, it was not found
 }
 
