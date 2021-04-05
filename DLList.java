@@ -1,5 +1,11 @@
-//This class implements a Singly Linked List
-
+/*
+CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
+Minilab: <Minilab #6>
+Author: <Katy Hochstetler> <36473082>
+Description: <In this mini lab I have created a double linked list that can traverse 
+forwards and backwards using prev and next. It can add or remove an element from anywhere in the 
+list.
+*/
 import java.util.*;
 
 public class DLList<E> {
