@@ -1,131 +1,151 @@
-/*
-CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
-Minilab: <Minilab #6>
-Author: <Katy Hochstetler> <36473082>
-Description: <In this mini lab I have created a double linked list that can traverse 
-forwards and backwards using prev and next. It can add or remove an element from anywhere in the 
-list.
-*/
+package Minilab_6;
+//This class implements a Singly Linked List
+
 import java.util.*;
 
-public class DLList<E> {
+public class SLList<E>
+{
 	//------- data
-	protected DLLNode<E> head;
-	protected DLLNode<E> tail;
+	protected SLLNode<E> head;
+	protected SLLNode<E> tail;
 
 	//------- constructors
-	public DLList() {
+	public     SLList()
+	{
 		head = tail = null;
 	}
 
 	//------- methods
 	//addFirst - adds an element to the front of the list
-	public void addFirst(E theData) {
-		//create a new DLLNode to hold theData
-		DLLNode<E> temp = new DLLNode<E>(theData);
+	public void addFirst(E theData)
+	{
+		//create a new SLLNode to hold theData
+		SLLNode<E> temp = new SLLNode<E>(theData);
 
-		if (head == null)   //is the list empty?
+		if (head==null)   //is the list empty?
 			head = tail = temp;
-		else {   //list is not empty
+		else    //list is not empty
+		{
 			temp.next = head;
-			temp.prev = null;
-			head.prev = temp;
 			head = temp;
 		}
 	}
 
 	//addLast - adds an element to the end of the list
-	public void addLast(E theData) {
+	public void addLast(E theData)
+	{
 		//create a new SLLNode to hold theData
-		DLLNode<E> temp = new DLLNode<E>(theData);
+		SLLNode<E> temp = new SLLNode<E>(theData);
 
 		if (head == null)   //is the list empty?
 			head = tail = temp;
-		else {  //list is not empty
-			temp.prev = tail;
+		else    //list is not empty
+		{
 			tail.next = temp;
 			tail = temp;
 		}
 	}
 
 	//removeFirst - removes and returns the first element
-	public E removeFirst() {
+	public E removeFirst()
+	{
 		//case1: list is empty
-		if (head == null) {
+		if (head == null)
 			throw new NoSuchElementException("can't removeFirst from empty list!");
+
 		//case2: list has 1 element
-		} else if (head == tail) {
+		else if (head == tail)
+		{
 			E savedData = head.data;
 			head = tail = null;
 			return savedData;
+		}
+
 		//case3: list has many elements
-		} else {
+		else
+		{
 			E savedData = head.data;
 			head = head.next;
-			head.prev = null;
 			return savedData;
 		}
 	}
 
 	//removeLast - removes and returns the last element
-	public E removeLast() {
+	public E removeLast()
+	{
 		//case1: list is empty
-		if (head == null) {
+		if (head == null)
 			throw new NoSuchElementException("can't removeLast from empty list!");
+
 		//case2: list has 1 element
-		} else if (head == tail) {
+		else if (head == tail)
+		{
 			E savedData = tail.data;
 			head = tail = null;
 			return savedData;
+		}
+
 		//case3: list has many elements
-		} else {
+		else
+		{
+			//traverse the list, stopping at the node IN FRONT OF the last node
+			SLLNode<E> cursor = head;
+			while (cursor.next != tail)
+				cursor = cursor.next;
+
+			//when we get to here, cursor has stopped at the node before tail
 			E savedData = tail.data;
-			tail = tail.prev;
-			tail.next = null;
+			cursor.next = null;
+			tail = cursor;
 			return savedData;
 		}
+
 	}
 
 	//contains - returns true if the list contains what is received
-	public boolean contains(Object obj) {
+	public boolean contains(Object obj)
+	{
 		//traverse the list, seeing if any node has data that .equals obj
-		DLLNode<E> cursor = head;
-		while (cursor != null) {
+		SLLNode<E> cursor = head;
+		while (cursor != null)
+		{
 			if (cursor.data.equals(obj))    //found it!
 				return true;                //so return
 			cursor = cursor.next;
 		}
+
 		return false;   //if we finished the loop and got to here, it was not found
 }
 
 	//remove - removes what is received from the list.  Returns true if it
 	//                was actually found and removed
-	public boolean remove(Object obj) {
+	public boolean remove(Object obj)
+	{
 		if (!this.contains(obj)) //return false if it is not contained (can't remove it)
 			return false;
 
 		//if we get to here, we know that the list contains obj somewhere
 		//change the links and return true at the end.
-		else if (head.data.equals(obj)) {   //is it at the front?   If so, remove it
+		else if (head.data.equals(obj))    //is it at the front?   If so, remove it
+		{
 			this.removeFirst();
 			return true;
 		}
 
-		else {   //not at front, so traverse the list to find the one to be deleted (know its there)
-			DLLNode<E> doomed = head;
+		else    //not at front, so traverse the list to find the one to be deleted (know its there)
+		{
+			SLLNode<E> doomed = head;
 			while (!doomed.data.equals(obj))
 				doomed = doomed.next;
 
 			//now that it is found, we also need to find the node in front of it
-			DLLNode<E> inFront = head;
+			SLLNode<E> inFront = head;
 			while (inFront.next != doomed)
 				inFront = inFront.next;
 
 			//now we have a pointer to the node to be deleted and the one in front
 			               //draw it out to see how links must change...
 			inFront.next = doomed.next;
-			if (doomed.next != null)
-			doomed.next.prev = inFront;
 
 			//also...if the one that was deleted was the tail, we must reset the tail
 			if (doomed == tail)
@@ -137,7 +157,8 @@ public class DLList<E> {
 }
 
 	//add - inserts what is received at the given index
-	public void add(int index, E elt) {
+	public void add(int index, E elt)
+	{
 		if (index < 0 || index > size())    //check if index is out of bounds
 			throw new IllegalArgumentException("illegal index: " + index);
 
@@ -151,11 +172,11 @@ public class DLList<E> {
 		else    //if we get to here, it will go in the middle somewhere
 		{
 			// 1. create a new node to hold it
-			DLLNode<E> temp = new DLLNode<E>(elt);
+			SLLNode<E> temp = new SLLNode<E>(elt);
 
 			// 2. traverse the list to find where it goes
 			//     when we traverse, we will stop at the node IN FRONT OF where it goes
-			DLLNode<E> cursor = head;
+			SLLNode<E> cursor = head;
 			for (int i=1; i<index; i++)
 				cursor = cursor.next;
 
@@ -164,37 +185,42 @@ public class DLList<E> {
 			//    it is part of the list.  draw it out so see how
 			//    the links change...
 			temp.next = cursor.next;
-			temp.prev = cursor;
-			cursor.next.prev = temp;
 			cursor.next = temp;
 		}
 	}
 
 	//getFirst - returns the data from the head
-	public E getFirst() {
+	public E getFirst()
+	{
 		if (head == null)
 			throw new NoSuchElementException("can't getFirst from empty list");
 		return head.data;
 	}
 
 	//getLast - returns the data from the tail
-	public E getLast() {
+	public E getLast()
+	{
 		if (head == null)
 			throw new NoSuchElementException("can't getLast from empty list");
 		return tail.data;
 	}
 
+
+
 	//isEmpty - returns true if the list is empty
-	public boolean isEmpty() {
+	public boolean isEmpty()
+	{
 		return head == null;
 	}
 
 	//size - returns its size
-	public int size() {
+	public int size()
+	{
 		int theSize = 0;
-		DLLNode<E> cursor = head;
+		SLLNode<E> cursor = head;
 
-		while (cursor != null) { //traverse the list, counting the elements
+		while (cursor != null) //traverse the list, counting the elements
+		{
 			theSize++;
 			cursor = cursor.next;
 		}
@@ -203,10 +229,12 @@ public class DLList<E> {
 	}
 
 	//toString - returns its representation as a String
-	public String toString() {
+	public String toString()
+	{
 		String answer = "";
-        DLLNode<E> cursor = head;
-        while (cursor != null) { //traverse the list, building up a String
+        SLLNode<E> cursor = head;
+        while (cursor != null)   //traverse the list, building up a String
+		{
 			answer = answer + cursor.data + "--->";
 			cursor = cursor.next;
 		}
@@ -218,23 +246,24 @@ public class DLList<E> {
 
 	//------- "inner classes"
 	//==============================
-	class DLLNode<E> {
+	class SLLNode<E>
+	{
 		//------- data
 		protected E data;
-		protected DLLNode<E> next;
-		protected DLLNode<E> prev;
+		protected SLLNode<E> next;
 
 		//------- constructors
-		public DLLNode(E theData) {
+		public SLLNode(E theData)
+		{
 			this.data = theData;
 			next = null;
-			prev = null;
 		}
 
 		//------- methods
-		public String toString() {
+		public String toString()
+		{
 			return this.data.toString();
 		}
-	}	 //end of DLLNode
+	}	 //end of SLLNode
 
-}   //end of DLList
+}   //end of SLList

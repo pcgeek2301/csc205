@@ -1,3 +1,4 @@
+package Minilab_6;
 public class DLListWithOutput<E> extends DLList<E>
 {
 	// ------ no data - DLList's head and tail should be proteced!

@@ -1,3 +1,4 @@
+package Minilab_6;
 public class DLLWithOutputTester_Minilab_6_DLL
 {
 	public static void main(String[ ] args)
