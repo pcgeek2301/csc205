@@ -1,4 +1,4 @@
-
+package CSC120;
 public class TesterForAssignment11 {
     public static void main(String[] args) {
         boolean[][] array = {
