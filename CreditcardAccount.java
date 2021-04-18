@@ -1,3 +1,9 @@
+/*
+CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
+Program: <Program #2>
+Author: <Katy Hochstetler> <36473082>
+Description: <>
+*/
 public class CreditcardAccount extends BankAccount {
     protected int creditLimit;
 
