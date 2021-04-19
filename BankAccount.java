@@ -2,7 +2,9 @@
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Program: <Program #2>
 Author: <Katy Hochstetler> <36473082>
-Description: <>
+Description: <In this program 2, I have created 4 classes. In the bank account abstract class I have several methods including a 
+default constructor that sets the account number, interest rate, and balance. I have methods for updating the accounts balance, a 
+method to get the balance, get/set the account number, get/set interest rate, and 2 abstract methods.>
 */
 public abstract class BankAccount {
     protected String accountNumber; 
@@ -17,7 +19,6 @@ public abstract class BankAccount {
 
     public boolean credit(int amount) {
         this.balance += amount; 
-
         return true;
     }
 

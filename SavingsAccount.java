@@ -2,10 +2,11 @@
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Program: <Program #2>
 Author: <Katy Hochstetler> <36473082>
-Description: <>
+Description: <In this program 2, I have created 4 classes. In the savings account class that extends bank account 
+I have several methods including methods for updating the accounts balance, applying interest, and displaying 
+account information.>
 */
 public class SavingsAccount extends BankAccount {
-
 
     public SavingsAccount() {
         super();

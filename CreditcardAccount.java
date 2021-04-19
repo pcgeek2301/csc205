@@ -2,11 +2,17 @@
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Program: <Program #2>
 Author: <Katy Hochstetler> <36473082>
-Description: <>
+Description: <In this program 2, I have created 4 classes. In the creditcard account class that extends bank account 
+I have several methods including methods for updating the accounts balance, get/set creditlimit, applying interest, and 
+displaying account information.>
 */
 public class CreditcardAccount extends BankAccount {
     protected int creditLimit;
 
+    public CreditcardAccount() {
+        super();
+    }
+    
     public boolean debit(int amount) {
         if (amount > creditLimit) {
             return false;
