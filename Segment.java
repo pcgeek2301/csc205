@@ -47,6 +47,26 @@ public class Segment implements SegmentInterface {
         }
     }
 
+    public String toString() {
+        return "Segment " + leftEndpoint.toString() + " " + rightEndpoint.toString();
+    }
+
+    public boolean equals(Object other) {
+        boolean equals;
+        if (other instanceof Segment) {
+            Segment s = (Segment)other;
+           if (this.leftEndpoint == s.leftEndpoint && this.rightEndpoint == s.rightEndpoint) {
+               equals = true;
+           } else {
+               equals = false;
+           }
+        } else {
+            equals = false;
+        }
+        
+        return equals;
+    }
+
     public double length() {
         return this.leftEndpoint.distanceTo(this.rightEndpoint);
     }
@@ -57,8 +77,13 @@ public class Segment implements SegmentInterface {
     }
 
     public boolean isAnEndpoint(Point p) {
-        
-        return false;
+        if (p.equals(this.leftEndpoint)) {
+            return true;
+        } else if (p.equals(this.rightEndpoint)) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
 }
