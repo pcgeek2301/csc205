@@ -1,3 +1,4 @@
+package Minilab_7;
 //This is the interface for the Segment class
 
 public interface SegmentInterface

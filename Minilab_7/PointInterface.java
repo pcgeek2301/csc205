@@ -1,3 +1,4 @@
+package Minilab_7;
 //This is the interface for a Point class (which will represent a 2-dimensional Point)
 
 public interface PointInterface

@@ -1,3 +1,4 @@
+package Minilab_7;
 //This will run test cases for the Segment class (Minilab assignment).
 //It will not prompt for input, //but is expecting input of the form "testing <what to test>"
 
