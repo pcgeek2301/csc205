@@ -51,8 +51,8 @@ public class Segment implements SegmentInterface {
         if (userSegment == null) {
             throw new IllegalArgumentException("No segment received");
         } else {
-            this.firstEndpoint = userSegment.firstEndpoint;
-            this.secondEndpoint = userSegment.secondEndpoint;
+            this.firstEndpoint = new Point(userSegment.firstEndpoint);
+            this.secondEndpoint = new Point(userSegment.secondEndpoint);
         }
     }
 
