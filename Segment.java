@@ -26,10 +26,11 @@ public class Segment implements SegmentInterface {
             throw new IllegalArgumentException("Points cannot be null");
         } else if (firstPoint.equals(secondPoint)) {
             throw new IllegalArgumentException("Points cannot be the same, this segment would have a length of 0.");
-        } else {
-            this.firstEndpoint = firstPoint;
-            this.secondEndpoint = secondPoint;
-        }
+        } 
+
+        this.firstEndpoint = firstPoint;
+        this.secondEndpoint = secondPoint;
+    
     }
 
     // 1 parameterized constructor 
@@ -40,20 +41,21 @@ public class Segment implements SegmentInterface {
             throw new IllegalArgumentException("Points cannot be null");
         } else if (endPoint.equals(originEndpoint)) {
             throw new IllegalArgumentException("Points cannot be the same, this segment would have a length of 0.");
-        } else {
-            this.firstEndpoint = originEndpoint;
-            this.secondEndpoint = endPoint;
         }
+
+        this.firstEndpoint = originEndpoint;
+        this.secondEndpoint = endPoint;
     }
 
     // deep copy constructor 
     public Segment(Segment userSegment) {
         if (userSegment == null) {
             throw new IllegalArgumentException("No segment received");
-        } else {
-            this.firstEndpoint = new Point(userSegment.firstEndpoint);
-            this.secondEndpoint = new Point(userSegment.secondEndpoint);
-        }
+        } 
+
+        this.firstEndpoint = new Point(userSegment.firstEndpoint);
+        this.secondEndpoint = new Point(userSegment.secondEndpoint);
+
     }
 
     // displays information about segment
@@ -94,15 +96,15 @@ public class Segment implements SegmentInterface {
     // checks if a point is one of the end points in this segment
     public boolean isAnEndpoint(Point p) {
         if (p == null) {
-            throw new IllegalArgumentException("No point recieved");
+            throw new IllegalArgumentException("No point received");
         } else {
             if (p.equals(this.firstEndpoint)) {
                 return true;
             } else if (p.equals(this.secondEndpoint)) {
                 return true;
-            } else {
-                return false;
-            }
+            } 
+            
+            return false;
         }
     }
 }
