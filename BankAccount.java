@@ -37,7 +37,7 @@ public abstract class BankAccount {
     }
 
     public String getAccountNumber() {
-        return accountNumber;
+        return this.accountNumber;
     }
 
     public void setAccountNumber(String accountNumber) {
