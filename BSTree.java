@@ -1,3 +1,12 @@
+/*
+CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
+Program: <Program #3>
+Author: <Katy Hochstetler> <36473082>
+Description: <In this program 3, I have created 1 class. In the BSTree I have several methods including 
+a default constructor that sets the the root to null. I have methods for adding a node, a method to 
+check if the binary search tree contains a node, size of tree, prints the binary search tree in chronological
+order, a to string method, and an inner node class. >
+*/
 public class BSTree<T extends Comparable<T>> implements Tree<T> {
     protected Node root;
     private int size = 0;
@@ -9,10 +18,10 @@ public class BSTree<T extends Comparable<T>> implements Tree<T> {
 
     public void add(T item) {
         if (!contains(item)) {
-            if (root == null) {
+            if (root == null) { // if the list is empty
                 root = new Node(item);
             } else {
-                root.add(item);
+                root.add(item); // if we have at least one node in the list
             }
             size++;
         }
@@ -36,7 +45,7 @@ public class BSTree<T extends Comparable<T>> implements Tree<T> {
     }
 
     public int size() {
-        return size;
+        return size; // this number is kept track through the add function
     }
 
     public void inOrderPrint() {
@@ -44,6 +53,7 @@ public class BSTree<T extends Comparable<T>> implements Tree<T> {
     }
     
     private String printNode(Node currNode) {
+        // uses the LNR method 
         if (currNode.left != null) {
             printNode(currNode.left);
         } 
