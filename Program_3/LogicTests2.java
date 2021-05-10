@@ -1,3 +1,5 @@
+package Program_3;
+
 public class LogicTests2 {
     public static void main(String[] args) {
         Tree<Integer> tree = new BSTree<Integer>();

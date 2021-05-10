@@ -1,3 +1,4 @@
+package Program_3;
 public interface Tree <T extends Comparable <T> >{
 	public void add(T item);
 	public boolean contains(T item);
