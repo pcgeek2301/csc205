@@ -2,9 +2,8 @@
 CSC 205: <Class #37533> <Meeting days: Monday 5:00pm - 8:30pm>
 Program: <Program #3>
 Author: <Katy Hochstetler> <36473082>
-Description: <In this program 3, I have created 1 class. In the BSTree I have several methods including 
-a default constructor that sets the the root to null. I have methods for adding a node, a method to 
-check if the binary search tree contains a node, size of tree, prints the binary search tree in chronological
+Description: <In this program 3, I have created 1 class. In the BSTree I have several methods including, adding a node, a 
+method to check if the binary search tree contains a node, size of tree, prints the binary search tree in chronological
 order, a to string method, and an inner node class. >
 */
 public class BSTree<T extends Comparable<T>> implements Tree<T> {
