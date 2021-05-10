@@ -10,11 +10,7 @@ order, a to string method, and an inner node class. >
 public class BSTree<T extends Comparable<T>> implements Tree<T> {
     protected Node root;
     private int size = 0;
-    String nodesInOrderString = "";
-
-    public BSTree() {
-        root = null;
-    }
+    StringBuilder nodesInOrderString = new StringBuilder();
 
     public void add(T item) {
         if (!contains(item)) {
@@ -59,13 +55,13 @@ public class BSTree<T extends Comparable<T>> implements Tree<T> {
         } 
 
         System.out.print(currNode.data + " ");
-        nodesInOrderString += currNode.data + " ";
+        nodesInOrderString.append(currNode.data + " ");
 
         if (currNode.right != null) {
             printNode(currNode.right);
         }
 
-        return nodesInOrderString;
+        return nodesInOrderString.toString();
 
     }
 
